@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset=UTF-8>
+	<title>Hebrew Typing Test</title>
+	<script src="../js/checkHebrew.js"></script>
+	<link href="../css/bootstrap-4.5.2.min.css" rel="stylesheet">
+	<script src="../js/jquery-3.5.1.min.js"></script>
+	<script src="../js/bootstrap-4.5.2.min.js"></script>
+	<link href="../css/main.css" rel="stylesheet">
+	<script src="../js/main.js"></script>
+
+	<style>
+	input.hebrewtypingtest {
+		font-family: "SBL Hebrew";
+		font-size: 60px;
+		width: 650px;
+		height: 100px;
+	}
+	</style>
+</head>
+
+<body>
+	<div id="nav"></div>	<div class="container">
+
+	<h1> Hebrew Typing Test </h1>
+	<p class="hebt" dir="rtl"> שָׁלוֹם</p>
+	<p> Type Hebrew consonants, vowels, or cantillation marks in the box
+		below, it will show you the names of what you typed as well as their
+		Unicode values.</p>
+	<h3> Please Type or Paste Hebrew words in the box below:<br></h3>
+	<input class="hebrewtypingtest" id="hebrewtypingtest" oninput="checkHebrew()" dir="rtl" autofocus="" type="text">
+	<p></p>
+	<p style="font-size:30px">You typed: <span id="resultName" style="color:red; padding-left: 55px;"></span>
+	</p>
+	<p id="resultWarning" ;=""> </p>
+	<p style="font-size:30px">Unicode Value:<span id="resultCode" style="color:blue;"></span>
+	</p>
+	<br>
+	<h3>Notes:</h3>
+	<ul id="note">
+		<li> Please use <a href="../index.html">the Hebrew (SIL) keyboard</a> in Keyman. </li>
+
+		<li><button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#typingOrder">Typing Order</button></li>
+		<div id="typingOrder" class="collapse show alert alert-info">
+			<ul>
+				<li>You need to use the SIL keyboard. When typing Hebrew, use the following order:
+
+					<ol>
+						<li>Type the consonant. For <span class="heb" dir="rtl">שׂ</span> and <span class="heb" dir="rtl">שׁ</span>, the SIL keyboard allows you to type each one as a single keystroke (using <em>f</em> and <em>j</em>, respectively).</li>
+						<li>Type the daghesh, if there is one. Dagesh Forte and Dagesh Lene use the same key.</li>
+						<li>Type the vowel. Always type the vowel <em>after</em> the consonant!
+							<ul>
+								<li>Type Holem Waw <span class="hebg" dir="rtl">וֹ</span> as Waw <span class="heby" dir="rtl">ו</span> followed by Holem <span class="heby" dir="rtl">◌ֹ</span>. Type Shureq <span class="hebg" dir="rtl">וּ</span> as Waw <span
+										class="heby" dir="rtl">ו</span> followed by Dagesh <span class="heby" dir="rtl">◌ּ</span>.</li>
+								<li>Use “O” for Holem.</li>
+								<ul>
+									<li>Do not type “Shift + O” for Holem. It is for Holem going with the consonantal Waw. It is not needed in this class.</li>
+								</ul>
+							</ul>
+						</li>
+						<li>If the word has a furtive pathach, type the furtive pathach AFTER Ayin (although it is always pronounced before Ayin), e.g., <span class="hebg" dir="rtl">שְׁמֹעַ</span>. </li>
+							<ul>
+								<li>If you typed the pathach before Ayin, it will end up like <span
+									class="hebr" dir="rtl">שְׁמַֹע</span>, which is incorrect.</li>
+							</ul>
+							‬‬‬
+					</ol>
+
+					<b>If you do not follow this order, a Canvas exam may read it as incorrect.</b>
+				</li>
+			</ul>
+		</div>
+
+		<!-- tips for typing -->
+		<li><button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#typingTips">Tips for Typing</button></li>
+		<div class="collapse show alert alert-info" id="typingTips">
+			<ul>
+				<li>In this class, you will NOT need to type the <b>accents</b> and the <b>metheg</b> for any exams, and you should NOT type them (the automatic grading may count it wrong).</li>
+				<ul>
+					<li>For instance, type <span class="hebg" dir="rtl">קָטַלְתָּ</span>, not <span class="hebr" dir="rtl">קָטַ֫לְתָּ</span>.</li>
+				</ul>
+				<li>If a word has a <b>final letter</b>, type the final letter.</li>
+				<ul>
+					<li>For instance, type <span class="hebg" dir="rtl">קְטַלְתֶּם</span>, not <span class="hebr" dir="rtl">קְטַלְתֶּמ</span>.</li>
+					<li>This also applies to three letter roots in
+							parsings. For instance, type <span class="hebg" dir="rtl">מלך‫/‬מלךְ</span> (shewa optional but recommended), not <span class="hebr" dir="rtl">מלכ</span>.‬‬‬</li>
+				</ul>
+				<li><b>Qamets Hatuph</b> <span class="hebg" dir="rtl">◌ׇ</span> and <b>Qamets</b> <span class="heby" dir="rtl">◌ָ</span> are different. </li>
+				<ul>
+					<li>Qamets is <b>SHIFT</b> + <b>A</b>, but </li>
+					<li>Qamets Hatuph is <b>Alt</b> + <b>CTRL</b> + <b>O</b> OR <b>right
+								Alt</b> + <b>O</b> (for Windows) and <b>Option</b> + <b>O</b> (for Mac).</li>
+					<ul>
+							<li><small>With the SIL Hebrew keyboard, you may also use Alt+Ctrl+A (Win) / Option+A (Mac) to type Qamets Hatuph. But try to avoid it, lest you may get it confused with Qamets.</small></li>
+					</ul>
+					<li>Your answer will be marked as incorrect if you use SHIFT + A for Qamets Hatuph.</li>
+				</ul>
+			</ul>
+		</div>
+
+		<!-- issue of fonts -->
+		<li><button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#fontsIssue">The issue of fonts</button></li>
+		<div id="fontsIssue" class="collapse show alert alert-info">
+			<ul>
+				<li>Do not worry if the Holem seems to be above Aleph that follows it, or the Holem overlap with the Shin Dot. It is a font issue.</li>
+				<li>Also, with some fonts Qamets and Qamets Hatuph look slightly different. This is also a font issue. With other fonts, they look the same.</li>
+				<li>For instance, take a look at this chart:</li>
+				<ul>
+					<li><a href="../img/Qamets_Qamets-Hatuph_Holem_Hebrew_fonts_comparison.png"><img src="../img/Qamets_Qamets-Hatuph_Holem_Hebrew_fonts_comparison.png" alt="Qamets, Qamets-Hatuph, Holem: Hebrew fonts comparison.png" /></a></li>
+				</ul>
+			</ul>
+		</div>
+
+		<!-- not accepted Hebrew -->
+		<li><button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#notacceptheb">Some Hebrew Letters are NOT accepted! <small>(click to see details)</small></button></li>
+		<div id="notacceptheb" class="collapse alert alert-info">
+			<ul>
+				<li class="text-danger">If you use the Hebrew (SIL) keyboard in Keyman, you don't need to worry about it.</li>
+				<li>It accepts inputs that fall in the Unicode range of <b>\u0591–\u05EA</b>.
+					It does not accept the letters fall in the range of <b>\u05F0–\u05F2</b>
+					and <b>\uFB1D–\uFB4F</b>, except for \uFB2A (Shin with Shin Dot) and
+					\uFB2B (Shin with Sin Dot). </li>
+				<ul>
+					<li> If you type these non-acceptable Hebrew letters (e.g., <span class="hebr">בּ</span> or <span class="hebr">וֹ</span> or <span class="hebr">וּ</span>), it will tell you
+						the name of the letter you typed and also let you know that they are
+						<span style="color:red">not acceptable Hebrew</span> (for the course).
+					</li>
+					<ul>
+						<li>
+							If you use the recommended Hebrew (SIL) keyboard in Keyman, you will not have this issue. If you use another keyboard, or if you copy Hebrew from elsewhere, you <i>may</i> encounter this issue.
+						</li>
+					</ul>
+					<li> If you typed non-Hebrew letters, it will tell you that what you
+						typed is <span style="color:red">not Hebrew </span>. This includes
+						the punctuation marks that are used in the Hebrew keyboards. </li>
+				</ul>
+			</ul>
+		</div>
+
+		<!-- Shin and Sin -->
+		<!--
+
+		<li><button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#ShinAndSin">Shin and Sin <small>(click to see details)</small></button></li>
+		<div id="ShinAndSin" class="collapse alert alert-info">
+			<ul>
+				<li class="text-danger">If you use the Hebrew (SIL) keyboard in <b>Keyman</b>, you don't need to worry about it.</li>
+				<ul>
+					<li>Shin and Sin are presented consistently as <span class="heby" dir="rtl">שׁ</span> <b>\u05E9 \u05C1 {Shin}{Shin Dot}</b> and <span class="heby"
+							dir="rtl">שׂ</span> <b>\u05E9 \u05C2 {Shin}{Sin Dot}</b> respectively.</li>
+				</ul>
+				<li class="text-danger">If you use the <b>SBL Hebrew keyboard</b> with SIL layout. You need to be aware that Shin and Sin are presented in two ways. </li>
+				<ul>
+					<li>Using the Hebrew (SIL) keyboard, on <span style="color:blue">MacOS</span>, the two letters are <span class="hebg" dir="rtl">שׁ</span> <b>\uFB2A {Shin with Shin Dot}</b> and <span class="hebg" dir="rtl">שׂ</span> <b>\uFB2B {Shin with Sin
+							Dot}</b>. </li>
+					<li>If you are on <span style="color:blue">Windows</span> or <span style="color:blue">mobile devices</span>, they are presented as <span class="heby" dir="rtl">שׁ</span> <b>\u05E9 \u05C1 {Shin}{Shin Dot}</b> and <span class="heby"
+							dir="rtl">שׂ</span> <b>\u05E9 \u05C2 {Shin}{Sin Dot}</b> respectively.</li>
+				</ul>
+				</li>
+				<li class="text-danger">To avoid any potential trouble, I strongly recommend that You use the Hebrew (SIL) keyboard in <b>Keyman</b>.</li>
+
+			</ul>
+		</div>
+	</ul>
+ -->
+	<p class="bottom">* The SBL Hebrew font is used with permission. See <a href="https://www.sbl-site.org/assets/pdfs/SBL_Font_End_User_License_Agreement.pdf">SBL Font End User License Agreement</a>.</p>
+</div></body>
+
+</html>
